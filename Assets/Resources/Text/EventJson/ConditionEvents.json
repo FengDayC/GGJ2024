@@ -1,0 +1,134 @@
+[
+    {
+        "TemplateId": 100,
+        "Name": "Qx测试",
+        "Path": "ConditionEvents/测试事件",
+        "AutoRun": -1,
+        "MaxCount": 0,
+        "Show": 2,
+        "Text": "你想要测试QxFramework的哪个功能",
+        "ImagePath": "Textures/122",
+        "Condition": {
+            "And": [
+                {
+                    "And": [
+                        {
+                            "Func": [
+                                "MoreThan",
+                                "2,1"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "Effect": {
+            "List": [
+                {
+                    "Selections": [
+                        {
+                            "DisableShow": 0,
+                            "ShowCondition": true,
+                            "SelectionText": "触发事件",
+                            "Condition": {
+                                "And": []
+                            },
+                            "Effect": {
+                                "List": [
+                                    {
+                                        "Func": [
+                                            "TryEvent",
+                                            "101"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "DisableShow": 0,
+                            "ShowCondition": true,
+                            "SelectionText": "输出日志",
+                            "Condition": {
+                                "And": []
+                            },
+                            "Effect": {
+                                "List": [
+                                    {
+                                        "Func": [
+                                            "Log",
+                                            "\"这是一句日志\""
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "TemplateId": 101,
+        "Name": "触发事件测试",
+        "Path": "ConditionEvents/测试事件",
+        "AutoRun": 0,
+        "MaxCount": 0,
+        "Show": 2,
+        "Text": "这是一个测试事件",
+        "ImagePath": "Textures/122",
+        "Condition": {
+            "And": []
+        },
+        "Effect": {
+            "List": [
+                {
+                    "Selections": [
+                        {
+                            "DisableShow": 0,
+                            "ShowCondition": true,
+                            "SelectionText": "不能点的按钮",
+                            "Condition": {
+                                "And": [
+                                    {
+                                        "Func": [
+                                            "MoreThan",
+                                            "1,2"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "Effect": {
+                                "List": []
+                            }
+                        },
+                        {
+                            "DisableShow": 0,
+                            "ShowCondition": true,
+                            "SelectionText": "可以点的按钮",
+                            "Condition": {
+                                "And": [
+                                    {
+                                        "Func": [
+                                            "MoreThan",
+                                            "2,1"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "Effect": {
+                                "List": [
+                                    {
+                                        "Func": [
+                                            "DialogHit",
+                                            "\"好了这里只有一句话让你看了\""
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
